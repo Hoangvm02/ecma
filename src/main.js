@@ -57,18 +57,9 @@ router.on({
     //     // console.log("12");
     //     print(EditNewsPage.render());
     // },
-    "/admin/news/edit:id": ({ data }) => {
+    "/admin/news/edit/:id": ({ data }) => {
         const { id } = data;
         print(EditNewsPage.render(id));
     },
 });
 router.resolve();
-// "/admin": () => {
-//     print(AdminPage.render());
-// },
-// "/add": () => {
-//     print(AddPage.render());
-// },
-// "/edit": () => {
-//     print(EditPage.render());
-// },
