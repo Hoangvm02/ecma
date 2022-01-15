@@ -53,6 +53,10 @@ router.on({
         // console.log("12");
         print(AddNewsPage.render());
     },
+    // "/admin/news/edit": () => {
+    //     // console.log("12");
+    //     print(EditNewsPage.render());
+    // },
     "/admin/news/edit:id": ({ data }) => {
         const { id } = data;
         print(EditNewsPage.render(id));
