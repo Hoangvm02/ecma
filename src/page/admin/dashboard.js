@@ -1,8 +1,8 @@
 import NavAdmin from "../../components/NavAdmin";
 
 const DashBoardPage = {
-    render() {
-        return /* html */ `
+    async render() {
+        return `
         
             <div class="min-h-full">
                 ${NavAdmin.render()}
@@ -21,7 +21,6 @@ const DashBoardPage = {
                 </div>
                 </main>
             </div>
-    
         `;
     },
 };
