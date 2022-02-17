@@ -1,9 +1,10 @@
+import axios from "axios";
 import NavAdmin from "../../../components/NavAdmin";
+import { add } from "../../../api/posts";
 
-const AddNewsPage = {
-    render() {
-        return /* html */ `
-        
+const AdminAddPosts = {
+    async render() {
+        return `
         <div class="min-h-full">
             ${NavAdmin.render()}
             <header class="bg-white shadow">
@@ -17,33 +18,22 @@ const AddNewsPage = {
                 <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
                     <div class="px-4 py-6 sm:px-0">
                         <div class="border-4 border-dashed border-gray-200 rounded-lg h-96">
-                        <form action="#" method="POST">
+                        <form id="formAddPost">
                         <div class="shadow overflow-hidden sm:rounded-md">
                           <div class="px-4 py-5 bg-white sm:p-6">
                             <div class="grid grid-cols-6 gap-6">
                               <div class="col-span-6 sm:col-span-3">
-                                <label for="first-name" class="block text-sm font-medium text-gray-700">Họ Tên</label>
-                                <input  type="text" name="first-name" id="first-name" autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                              </div>
-                
-                              <div class="col-span-6 sm:col-span-3">
-                                <label for="last-name" class="block text-sm font-medium text-gray-700">CREATEDAT</label>
-                                <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                              </div>
-                
-                              <div class="col-span-6 sm:col-span-4">
-                                <label for="email-address" class="block text-sm font-medium text-gray-700">DESC</label>
-                                <input type="text" name="email-address" id="email-address" autocomplete="email" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                <label for="first-name" class="block text-sm font-medium text-gray-700">Title</label>
+                                <input  type="text" id="title-post" autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                               </div>
                               <div class="col-span-6 sm:col-span-4">
-                              <label for="email-address" class="block text-sm font-medium text-gray-700">ID</label>
-                              <input type="text" name="email-address" id="email-address" autocomplete="email" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                            </div>
-                
+                                <label  class="block text-sm font-medium text-gray-700">DESC</label>
+                                <input type="text" id="desc-post" autocomplete="email" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                              </div>
                               <div class="col-span-6">
                               <div>
                               <label class="block text-sm font-medium text-gray-700">
-                                Cover photo
+                                Img
                               </label>
                               <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                                 <div class="space-y-1 text-center">
@@ -55,18 +45,12 @@ const AddNewsPage = {
                                       <span>Upload a file</span>
                                       <input id="file-upload" name="file-upload" type="file" class="sr-only">
                                     </label>
-                                    <p class="pl-1">or drag and drop</p>
-                                  </div>
-                                  <p class="text-xs text-gray-500">
-                                    PNG, JPG, GIF up to 10MB
-                                  </p>
                                 </div>
                               </div>
-                            
                             </div>
                           </div>
                           <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
-                            <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            <button class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                               Save
                             </button>
                           </div>
@@ -79,5 +63,34 @@ const AddNewsPage = {
         </div>
                     `;
     },
+    afterRender() {
+        const formAddPost = document.querySelector("#formAddPost");
+        const CLOUDINARY_PRESET = "jkbdphzy";
+        const CLOUDINARY_API_URL = "https://api.cloudinary.com/v1_1/ecommercer2021/image/upload";
+
+        formAddPost.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            // Lấy giá trị của input file
+            const file = document.querySelector("#file-upload").files[0];
+            // Gắn vào đối tượng formData
+            const formData = new FormData();
+            formData.append("file", file);
+            formData.append("upload_preset", CLOUDINARY_PRESET);
+
+            // call api cloudinary, để upload ảnh lên
+            const { data } = await axios.post(CLOUDINARY_API_URL, formData, {
+                headers: {
+                    "Content-Type": "application/form-data",
+                },
+            });
+            // call API thêm bài viết
+            add({
+                title: document.querySelector("#title-post").value,
+                img: data.url,
+                desc: document.querySelector("#desc-post").value,
+            });
+        });
+    },
 };
-export default AddNewsPage;
+export default AdminAddPosts;

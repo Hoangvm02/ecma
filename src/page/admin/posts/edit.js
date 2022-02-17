@@ -1,10 +1,13 @@
+import axios from "axios";
 import NavAdmin from "../../../components/NavAdmin";
-import data from "../../../data";
+// import data from "../../../data";
+import { edit, get } from "../../../api/posts";
 
-const EditNewsPage = {
-    render(id) {
-        const found = data.find((element) => element.id === id);
-        return /* html */ `
+const AdminEditPost = {
+    async render(id) {
+        const { data } = await get(id);
+        console.log(data);
+        return `
         <div class="min-h-full">
         ${NavAdmin.render()}
         <main>
@@ -15,29 +18,18 @@ const EditNewsPage = {
             <div class="px-4 py-6 sm:px-0">
                 <div class="border-4 border-dashed border-gray-200 rounded-lg h-96">
                 <div class="mt-5 md:mt-0 md:col-span-2">
-                  <form action="" method="POST">
+                  <form action="" method="POST" id="formEditPost">
                     <div class="shadow overflow-hidden sm:rounded-md">
                       <div class="px-4 py-5 bg-white sm:p-6">
                         <div class="grid grid-cols-6 gap-6">
                           <div class="col-span-6 sm:col-span-3">
-                            <label for="first-name" class="block text-sm font-medium text-gray-700">Họ Tên</label>
-                            <input value="${found.title}" type="text" name="first-name" id="first-name" autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                            <label for="first-name" class="block text-sm font-medium text-gray-700">Title</label>
+                            <input value="${data.title}" type="text" name="first-name" id="title-post" autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                           </div>
-
-                          <div class="col-span-6 sm:col-span-3">
-                            <label for="last-name" class="block text-sm font-medium text-gray-700">CREATEDAT</label>
-                            <input value="${found.createdAt}"type="text" name="last-name" id="last-name" autocomplete="family-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                          </div>
-
                           <div class="col-span-6 sm:col-span-4">
                             <label for="email-address" class="block text-sm font-medium text-gray-700">DESC</label>
-                            <input value="${found.desc}" type="text" name="email-address" id="email-address" autocomplete="email" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                            <input value="${data.desc}" type="text" id="desc-post" autocomplete="email" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                           </div>
-                          <div class="col-span-6 sm:col-span-4">
-                          <label for="email-address" class="block text-sm font-medium text-gray-700">DESC</label>
-                          <input value="${found.id}" type="text" autocomplete="email" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                        </div>
-
                           <div class="col-span-6">
                           <div>
                           <label class="block text-sm font-medium text-gray-700">
@@ -51,7 +43,7 @@ const EditNewsPage = {
                               <div class="flex text-sm text-gray-600">
                                 <label for="file-upload" class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
                                   <span>Upload a file</span>
-                                  <input src="${found.img}" id="file-upload" name="file-upload" type="file" class="sr-only">
+                                  <input src="${data.img}" id="file-upload" name="file-upload" type="file" class="sr-only">
                                 </label>
                                 <p class="pl-1">or drag and drop</p>
                               </div>
@@ -66,6 +58,7 @@ const EditNewsPage = {
                       <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
                         <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                           Save
+                          
                         </button>
                       </div>
                     </div>
@@ -77,5 +70,36 @@ const EditNewsPage = {
         </div>
         `;
     },
+    afterRender(id) {
+        const formEditPost = document.querySelector("#formEditPost");
+        const CLOUDINARY_PRESET = "jkbdphzy";
+        const CLOUDINARY_API_URL = "https://api.cloudinary.com/v1_1/ecommercer2021/image/upload";
+
+        formEditPost.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            // Lấy giá trị của input file
+            const file = document.querySelector("#file-upload").files[0];
+            // Gắn vào đối tượng formData
+            const formData = new FormData();
+            formData.append("file", file);
+            formData.append("upload_preset", CLOUDINARY_PRESET);
+
+            // call api cloudinary, để upload ảnh lên
+            const { data } = await axios.post(CLOUDINARY_API_URL, formData, {
+                headers: {
+                    "Content-Type": "application/form-data",
+                },
+            });
+            // call API thêm bài viết
+            edit({
+                id,
+                title: document.querySelector("#title-post").value,
+                img: data.url,
+                desc: document.querySelector("#desc-post").value,
+            });
+        });
+    },
+
 };
-export default EditNewsPage;
+export default AdminEditPost;

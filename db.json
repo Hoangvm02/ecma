@@ -1,0 +1,39 @@
+{
+  "posts": [
+    {
+      "title": "Vũ Minh Hoàng",
+      "img": "http://res.cloudinary.com/ecommercer2021/image/upload/v1644921902/vdd7zltzfrbt8ch2izir.png",
+      "desc": "Hòa Bình",
+      "id": "oe7WfHB"
+    },
+    {
+      "title": "Hoàng",
+      "img": "http://res.cloudinary.com/ecommercer2021/image/upload/v1645024349/tjeexvzakbigresie04y.png",
+      "desc": "adas",
+      "id": "HNrabs6"
+    },
+    {
+      "title": "HoangvmPH13792",
+      "img": "http://res.cloudinary.com/ecommercer2021/image/upload/v1645024403/xnmnjd89e3dzxvybd9nw.png",
+      "desc": "Yên Thủy - Hòa Bình",
+      "id": "VtuEhNN"
+    }
+  ],
+  "users": [
+    {
+      "email": "hoangvmph13792@fpt.edu.vn",
+      "password": "$2a$10$dsP9tyD5IkS2CirxR2ioke2UYGliZlCdhQgr5yVabOVjSV5aRn/HC",
+      "id": 1
+    },
+    {
+      "email": "kiatilove002@gmail.com",
+      "password": "$2a$10$Q0TSQaKoQteyMdN3c0/D..4Mcqv9m9hzhIIMZ6AdrKrheGMD1lucm",
+      "id": 2
+    },
+    {
+      "email": "hoangvmph13192@fpt.edu.vn",
+      "password": "$2a$10$wavsTqwJqawzWTBzs48hnuDbMXaWfsm0/jJn3.RlNVAHhmxu6TRKq",
+      "id": 3
+    }
+  ]
+}

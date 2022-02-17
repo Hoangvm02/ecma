@@ -1,6 +1,8 @@
 const Banner = {
     render() {
-        return `<img src="https://picsum.photos/1024/400" />`;
+        return `
+        <a href=""><img class="w-full" src="https://picsum.photos/3000/700" alt=""></a>
+        `;
     },
 };
 export default Banner;
