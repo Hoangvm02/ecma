@@ -1,22 +1,28 @@
 {
   "posts": [
     {
-      "title": "Vũ Minh Hoàng",
-      "img": "http://res.cloudinary.com/ecommercer2021/image/upload/v1644921902/vdd7zltzfrbt8ch2izir.png",
-      "desc": "Hòa Bình",
-      "id": "oe7WfHB"
+      "id": 1,
+      "title": "Bài Viết Số 1",
+      "img": "http://res.cloudinary.com/ecommercer2021/image/upload/v1645506656/hyloeklwshcbjgxmq2kq.jpg",
+      "desc": "Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng vào việc trình bày và dàn trang phục vụ cho in ấn. Lorem Ipsum đã được sử dụng như một văn bản chuẩn cho ngành công nghiệp in ấn từ những năm 1500, khi một họa sĩ vô danh ghép nhiều đoạn văn bản với nhau để tạo thành một bản mẫu văn bản. Đoạn văn bản này không những đã tồn tại năm thế kỉ, mà khi được áp dụng vào tin học văn phòng, nội dung của nó vẫn không hề bị thay đổi. Nó đã được phổ biến trong những năm 1960 nhờ việc bán những bản giấy Letraset in những đoạn Lorem Ipsum, và gần đây hơn, được sử dụng trong các ứng dụng dàn trang, như Aldus PageMaker.Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng vào việc trình bày và dàn trang phục vụ cho in ấn. Lorem Ipsum đã được sử dụng như một văn bản chuẩn cho ngành công nghiệp in ấn từ những năm 1500, khi một họa sĩ vô danh ghép nhiều đoạn văn bản với nhau để tạo thành một bản mẫu văn bản. Đoạn văn bản này không những đã tồn tại năm thế kỉ, mà khi được áp dụng vào tin học văn phòng, nội dung của nó vẫn không hề bị thay đổi. Nó đã được phổ biến trong những năm 1960 nhờ việc bán những bản giấy Letraset in những đoạn Lorem Ipsum, và gần đây hơn, được sử dụng trong các ứng dụng dàn trang, như Aldus PageMaker."
     },
     {
-      "title": "Hoàng",
-      "img": "http://res.cloudinary.com/ecommercer2021/image/upload/v1645024349/tjeexvzakbigresie04y.png",
-      "desc": "adas",
-      "id": "HNrabs6"
+      "id": 2,
+      "title": "Bài Viết Số 2",
+      "img": "http://res.cloudinary.com/ecommercer2021/image/upload/v1645506647/cgdow951g2urnz10qzlg.jpg",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non orci tristique, blandit mauris eget, fermentum diam. Curabitur sit amet libero vel felis pellentesque sollicitudin eget quis odio. Sed vitae molestie eros, in aliquam velit. Curabitur egestas ullamcorper elit, quis facilisis orci ultrices sit amet. In hac habitasse platea dictumst. Phasellus ultrices dictum ligula et mollis. Aenean faucibus mattis ante sed tristique. Maecenas accumsan enim et erat varius lacinia ac vestibulum est. Vivamus eget eros in leo tincidunt viverra eget vel magna. Mauris aliquet ligula in venenatis auctor. Proin vehicula molestie nibh sed semper. Nam faucibus dui eu sollicitudin pretium."
     },
     {
-      "title": "HoangvmPH13792",
-      "img": "http://res.cloudinary.com/ecommercer2021/image/upload/v1645024403/xnmnjd89e3dzxvybd9nw.png",
-      "desc": "Yên Thủy - Hòa Bình",
-      "id": "VtuEhNN"
+      "id": 3,
+      "title": "Bài Viết Số 3",
+      "img": "http://res.cloudinary.com/ecommercer2021/image/upload/v1645506635/iiaolfstbenbqovjeog4.jpg",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non orci tristique, blandit mauris eget, fermentum diam. Curabitur sit amet libero vel felis pellentesque sollicitudin eget quis odio. Sed vitae molestie eros, in aliquam velit. Curabitur egestas ullamcorper elit, quis facilisis orci ultrices sit amet. In hac habitasse platea dictumst. Phasellus ultrices dictum ligula et mollis. Aenean faucibus mattis ante sed tristique. Maecenas accumsan enim et erat varius lacinia ac vestibulum est. Vivamus eget eros in leo tincidunt viverra eget vel magna. Mauris aliquet ligula in venenatis auctor. Proin vehicula molestie nibh sed semper. Nam faucibus dui eu sollicitudin pretium."
+    },
+    {
+      "id": 4,
+      "title": "Bài Viết Số 4",
+      "img": "http://res.cloudinary.com/ecommercer2021/image/upload/v1645509575/zimy6pwkydsq5rgmbp3n.jpg",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non orci tristique, blandit mauris eget, fermentum diam. Curabitur sit amet libero vel felis pellentesque sollicitudin eget quis odio. Sed vitae molestie eros, in aliquam velit. Curabitur egestas ullamcorper elit, quis facilisis orci ultrices sit amet. In hac habitasse platea dictumst. Phasellus ultrices dictum ligula et mollis. Aenean faucibus mattis ante sed tristique. Maecenas accumsan enim et erat varius lacinia ac vestibulum est. Vivamus eget eros in leo tincidunt viverra eget vel magna. Mauris aliquet ligula in venenatis auctor. Proin vehicula molestie nibh sed semper. Nam faucibus dui eu sollicitudin pretium."
     }
   ],
   "users": [
@@ -34,6 +40,107 @@
       "email": "hoangvmph13192@fpt.edu.vn",
       "password": "$2a$10$wavsTqwJqawzWTBzs48hnuDbMXaWfsm0/jJn3.RlNVAHhmxu6TRKq",
       "id": 3
+    },
+    {
+      "email": "kiatilove@gmail.com",
+      "password": "$2a$10$kyE8k/Q5aCNoQ0OAgC/STu3aA7WlhVOqjxB8G9aYkB.ZjzsbBIHbm",
+      "id": 4
+    },
+    {
+      "email": "namtdph13759@fpt.edu.vn",
+      "password": "$2a$10$CkQmMxxOqMa4asKaMPvS9.IDMFiBrn1GazuO1U47/tV973P6Fv1MW",
+      "id": 5
+    },
+    {
+      "email": "hoangvm02@gmail.comm",
+      "password": "$2a$10$y7s237PWSGR33zdPqXhvDuR.cCkPMyogwjBC5uzgECDXhcIbINJ.a",
+      "id": 6
+    }
+  ],
+  "products": [
+    {
+      "id": 23,
+      "name": "Sony Digital Watch",
+      "img": "https://i.ibb.co/4ZPL5F0/Rectangle-37.png",
+      "price": "1000000",
+      "desc": "- Tai nghe cách nhiệt, chống ồn. Công nghệ kết nối: Có dây\n\n- Trình điều khiển Neodymium 30mm. 110 dB MW - Tắt nguồn, 115 dB MW - Bật nguồn\n\n- Thời lượng pin lên đến 80 giờ\n\n- Đáp ứng tần số: 10 22.000 Hz\n\n- Trở kháng (Ohm) Nguồn BẬT 220 ohm, TẮT 45 ohm (ở 1 kHz). Chiều dài dây: 3,94 feet"
+    },
+    {
+      "id": 24,
+      "name": "Wilfred Alana Dress",
+      "img": "https://i.ibb.co/znBmcWV/Rectangle-37-1.png",
+      "desc": "ahihihihi",
+      "price": "200"
+    },
+    {
+      "id": 25,
+      "name": "Flared Cotton Tank Top",
+      "img": "https://i.ibb.co/4ZPL5F0/Rectangle-37.png",
+      "desc": "ahihihihi",
+      "price": "300"
+    },
+    {
+      "id": 26,
+      "name": "Wilfred Alana Dress",
+      "img": "https://i.ibb.co/vHj3fjr/Rectangle-37-2.png",
+      "desc": "ahihihihi",
+      "price": "400"
+    },
+    {
+      "name": "Flared Cotton Tank Top",
+      "img": "https://i.ibb.co/KsbPgh8/Rectangle-37-3.png",
+      "price": "1000000",
+      "desc": "hãng đẹp",
+      "id": 27
+    },
+    {
+      "name": "Flared Cotton Tank Top",
+      "img": "https://i.ibb.co/KsbPgh8/Rectangle-37-3.png",
+      "price": "1000000",
+      "desc": "hãng đẹp",
+      "id": 28
+    },
+    {
+      "id": 30,
+      "name": "Sony Digital Watch",
+      "img": "https://i.ibb.co/vHj3fjr/Rectangle-37-2.png",
+      "price": "1000000",
+      "desc": "Hàng mới về mã đẹp quá mọi người"
+    },
+    {
+      "id": 31,
+      "name": "Flared Cotton Tank Top",
+      "img": "https://i.ibb.co/KsbPgh8/Rectangle-37-3.png",
+      "price": "1000000",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id maximus urna. Etiam consectetur felis nunc, et laoreet nulla sagittis id. Integer cursus ipsum a faucibus rhoncus. Proin sit amet dolor nec magna pretium lobortis quis non urna. Pellentesque risus orci, faucibus vel consequat ut, feugiat eu dui. Maecenas nunc massa, egestas eget consequat eget, vulputate sed nulla. Proin tincidunt dolor id elit ullamcorper, ac suscipit magna dapibus. Praesent ultricies a quam ac euismod."
+    },
+    {
+      "name": "vũ minh hoàng",
+      "img": "https://i.ibb.co/vHj3fjr/Rectangle-37-2.png",
+      "price": "1000000",
+      "desc": "hãng đẹp",
+      "id": 32
+    },
+    {
+      "name": "Wilfred Alana Dress",
+      "img": "https://i.ibb.co/vHj3fjr/Rectangle-37-2.png",
+      "price": "2000000",
+      "desc": "hòa bình",
+      "id": 33
+    },
+    {
+      "name": "Flared Cotton Tank Top",
+      "img": "https://i.ibb.co/4ZPL5F0/Rectangle-37.png",
+      "price": "85000",
+      "desc": "adas",
+      "id": 34
+    },
+    {
+      "name": "Flared Cotton Tank Top",
+      "img": "https://i.ibb.co/4ZPL5F0/Rectangle-37.png",
+      "price": "850000",
+      "desc": "ad",
+      "id": 35
     }
   ]
 }

@@ -1,9 +1,9 @@
 import axios from "axios";
 import NavAdmin from "../../../components/NavAdmin";
 // import data from "../../../data";
-import { edit, get } from "../../../api/posts";
+import { edit, get } from "../../../api/product";
 
-const AdminEditPost = {
+const AdminEditproducts = {
     async render(id) {
         const { data } = await get(id);
         console.log(data);
@@ -18,18 +18,22 @@ const AdminEditPost = {
             <div class="px-4 py-6 sm:px-0">
                 <div class="border-4 border-dashed border-gray-200 rounded-lg h-96">
                 <div class="mt-5 md:mt-0 md:col-span-2">
-                  <form action="" method="POST" id="formEditPost">
+                  <form action="" method="POST" id="formEditProducts">
                     <div class="shadow overflow-hidden sm:rounded-md">
                       <div class="px-4 py-5 bg-white sm:p-6">
                         <div class="grid grid-cols-6 gap-6">
                           <div class="col-span-6 sm:col-span-3">
-                            <label for="first-name" class="block text-sm font-medium text-gray-700">Title</label>
-                            <input value="${data.title}" type="text" name="first-name" id="title-post" autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border border-black rounded-md">
+                            <label for="first-name" class="block text-sm font-medium text-gray-700">Name</label>
+                            <input value="${data.name}" type="text" name="first-name" id="name" autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                           </div>
                           <div class="col-span-6 sm:col-span-4">
                             <label for="email-address" class="block text-sm font-medium text-gray-700">DESC</label>
                             <textarea name="" class="border border-black" id="desc-post" cols="30" rows="10">${data.desc}</textarea> 
                           </div>
+                          <div class="col-span-6 sm:col-span-4">
+                          <label for="email-address" class="block text-sm font-medium text-gray-700">PRICE</label>
+                          <input value="${data.price}" type="text" id="price" autocomplete="email" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                        </div>
                           <div class="col-span-6">
                           <div>
                           <label class="block text-sm font-medium text-gray-700">
@@ -72,11 +76,11 @@ const AdminEditPost = {
         `;
     },
     afterRender(id) {
-        const formEditPost = document.querySelector("#formEditPost");
+        const formEditProducts = document.querySelector("#formEditProducts");
         const CLOUDINARY_PRESET = "jkbdphzy";
         const CLOUDINARY_API_URL = "https://api.cloudinary.com/v1_1/ecommercer2021/image/upload";
 
-        formEditPost.addEventListener("submit", async (e) => {
+        formEditProducts.addEventListener("submit", async (e) => {
             e.preventDefault();
 
             // Lấy giá trị của input file
@@ -95,13 +99,14 @@ const AdminEditPost = {
             // call API thêm bài viết
             edit({
                 id,
-                title: document.querySelector("#title-post").value,
+                name: document.querySelector("#name").value,
                 img: data.url,
+                price: document.querySelector("#price").value,
                 desc: document.querySelector("#desc-post").value,
             });
-            document.location.href = "/admin/posts";
+            document.location.href = "/admin/products";
         });
     },
 
 };
-export default AdminEditPost;
+export default AdminEditproducts;

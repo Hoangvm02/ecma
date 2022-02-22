@@ -14,7 +14,7 @@ const CartPage = {
         }
         return /* html */`
         ${Header.render()}
-            <div class="max-w-5xl mx-auto">
+            <div class="max-w-5xl mx-auto mt-40 mb-56">
             <table>
             ${Cart.render()}
              <main>

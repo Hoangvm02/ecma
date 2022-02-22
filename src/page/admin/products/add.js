@@ -1,8 +1,8 @@
 import axios from "axios";
 import NavAdmin from "../../../components/NavAdmin";
-import { add } from "../../../api/posts";
+import { add } from "../../../api/product";
 
-const AdminAddPosts = {
+const AdminAddProducts = {
     async render() {
         return `
         <div class="min-h-full">
@@ -23,13 +23,17 @@ const AdminAddPosts = {
                           <div class="px-4 py-5 bg-white sm:p-6">
                             <div class="grid grid-cols-6 gap-6">
                               <div class="col-span-6 sm:col-span-3">
-                                <label for="first-name" class="block text-sm font-medium text-gray-700">Title</label>
-                                <input  type="text" id="title-post" autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm  border border-black rounded-md">
+                                <label for="first-name" class="block text-sm font-medium text-gray-700">Name</label>
+                                <input  type="text" id="name" autocomplete="given-name" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border border-black rounded-md">
                               </div>
                               <div class="col-span-6 sm:col-span-4">
                                 <label  class="block text-sm font-medium text-gray-700">DESC</label>
-                                <textarea name="" class="border border-black" id="desc-post" cols="30" rows="10"></textarea>
+                                <input type="text" id="desc-post" autocomplete="email" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border border-black rounded-md">
                               </div>
+                              <div class="col-span-6 sm:col-span-4">
+                              <label  class="block text-sm font-medium text-gray-700">PRICE</label>
+                              <input type="text" id="price" autocomplete="email" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border border-black rounded-md">
+                            </div>
                               <div class="col-span-6">
                               <div>
                               <label class="block text-sm font-medium text-gray-700">
@@ -86,13 +90,14 @@ const AdminAddPosts = {
             });
             // call API thêm bài viết
             add({
-                title: document.querySelector("#title-post").value,
+                name: document.querySelector("#name").value,
                 img: data.url,
+                price: document.querySelector("#price").value,
                 desc: document.querySelector("#desc-post").value,
 
             });
-            document.location.href = "/admin/posts";
+            document.location.href = "/admin/products";
         });
     },
 };
-export default AdminAddPosts;
+export default AdminAddProducts;

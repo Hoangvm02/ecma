@@ -71,10 +71,10 @@ const Signin = {
                     console.log(data.user);
                     // Lưu thông tin user vào localStorage
                     localStorage.setItem("user", JSON.stringify(data.user));
-                    toastr.success("Đăng nhập thành công, chuyển trang sau 2s");
+                    toastr.success("ĐĂNG NHẬP THÀNH CÔNG");
                     setTimeout(() => {
                         document.location.href = "/";
-                    }, 2000);
+                    }, 1000);
                 }
             } catch (error) {
                 toastr.error(error.response.data);

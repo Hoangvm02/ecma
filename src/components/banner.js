@@ -1,7 +1,7 @@
 const Banner = {
     render() {
         return `
-        <a href=""><img class="w-full" src="https://picsum.photos/3000/700" alt=""></a>
+        <img src="https://picsum.photos/1024/400" />
         `;
     },
 };

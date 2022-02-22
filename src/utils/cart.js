@@ -14,25 +14,25 @@ export const addToCart = (newProduct, next) => {
     next();
 };
 export const increaseQuantity = (id) => {
-    cart.find((item) => item.id === id).quantity++;
+    cart.find((item) => item.id === +id).quantity++;
     localStorage.setItem("cart", JSON.stringify(cart));
 };
 export const decreaseQuantity = (id, next) => {
-    const currentProduct = cart.find((item) => item.id === id);
+    const currentProduct = cart.find((item) => item.id === +id);
     currentProduct.quantity--;
     if (currentProduct.quantity < 1) {
         const confirm = window.confirm("Ban co chac chan xoa khong?");
         if (confirm) {
-            cart = cart.filter((item) => item.id !== id);
+            cart = cart.filter((item) => item.id !== +id);
         }
     }
     localStorage.setItem("cart", JSON.stringify(cart));
     next();
 };
 export const removeItemInCart = (id, next) => {
-    const confirm = window.confirm("Ban co chac chan xoa khong?");
+    const confirm = window.confirm("Bạn có muốn xóa không?");
     if (confirm) {
-        cart = cart.filter((item) => item.id !== id);
+        cart = cart.filter((item) => item.id !== +id);
     }
     localStorage.setItem("cart", JSON.stringify(cart));
     next();

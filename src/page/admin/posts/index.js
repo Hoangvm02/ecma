@@ -7,8 +7,9 @@ const AdminPost = {
     async render() {
         const response = await getAll();
         return `
-                  <div class="min-h-full ">
-                      ${NavAdmin.render()}
+             ${NavAdmin.render()}
+             <div class="w-11/12 mx-auto">
+                     
                       <header class="bg-white shadow">
                           <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                               <div class="lg:flex lg:items-center lg:justify-between">
@@ -42,7 +43,7 @@ const AdminPost = {
                                       <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                         Title
                                       </th>
-                                      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                      <th scope="col" class="px-6 py-3  text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                         DESC
                                       </th>
                                       <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -74,10 +75,10 @@ const AdminPost = {
                                       </div>
                                     </div>
                                   </td>
-                                  <td class="px-6 py-4 whitespace-nowrap">
-                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                  <td class="px-6 py-4 mx-auto">
+                                    <p class="max-w-full px-2 text-xs font-semibold">
                                       ${post.desc}
-                                    </span>
+                                    </p>
                                   </td>
                                   <td class="px-6 py-4 whitespace-nowrap">
                                   <a href="/admin/posts/${post.id}/edit">Edit</a>
@@ -107,6 +108,7 @@ const AdminPost = {
                 const confirm = window.confirm("Bạn có chắc chắn muốn xóa không?");
                 if (confirm) {
                     axios.delete(`http://localhost:3000/posts/${id}`);
+                    document.location.href = "/admin/posts";
                 }
             });
         });
