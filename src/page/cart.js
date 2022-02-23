@@ -91,6 +91,23 @@ const CartPage = {
                                   `).join("")}
                                  </tbody>
                                  </table>
+                                <table class="mt-16" >
+                                <tr>
+                                <th scope="col" class=" px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                  Tổng Giá
+                                  </th>
+                                </tr>
+                                <tbody>
+                                <tr>
+                                <td>
+                                <input id="price" name="price" type="price" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="">
+                                </td>
+                                <td>
+                                <button class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">Thanh Toán</button>
+                              </td>
+                                </tr>
+                                </tbody>
+                                </table>
                               </div>
                             </div>
                           </div>

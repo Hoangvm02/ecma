@@ -16,6 +16,7 @@ import AdminEditposts from "./page/admin/posts/edit";
 import AdminEditproducts from "./page/admin/products/edit";
 import Signup from "./page/signup";
 import Signin from "./page/signin";
+import contact from "./page/contact";
 import CartPage from "./page/cart";
 import ProductDetailPage from "./page/products/detail";
 import postsDetailPage from "./page/posts/detail";
@@ -58,6 +59,7 @@ router.on({
     "/signup": () => print(Signup),
     "/signin": () => print(Signin),
     "/cart": () => print(CartPage),
+    "/contact": () => print(contact),
 
     // "/": () => {
     //     print(HomePage);
