@@ -18,8 +18,11 @@ import Signup from "./page/signup";
 import Signin from "./page/signin";
 import contact from "./page/contact";
 import CartPage from "./page/cart";
+import Checkouts from "./page/checkouts";
 import ProductDetailPage from "./page/products/detail";
 import postsDetailPage from "./page/posts/detail";
+import AdminAddCategory from "./page/admin/category/add";
+import AdminCategory from "./page/admin/category";
 
 const router = new Navigo("/", { linksSelector: "a" });
 
@@ -60,6 +63,9 @@ router.on({
     "/signin": () => print(Signin),
     "/cart": () => print(CartPage),
     "/contact": () => print(contact),
+    "/checkouts": () => print(Checkouts),
+    "/admin/category/add": () => print(AdminAddCategory),
+    "/admin/category": () => print(AdminCategory),
 
     // "/": () => {
     //     print(HomePage);

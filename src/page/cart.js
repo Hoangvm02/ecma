@@ -12,6 +12,10 @@ const CartPage = {
         if (localStorage.getItem("cart")) {
             cart = JSON.parse(localStorage.getItem("cart"));
         }
+        let sum = 0;
+        for (let i = 0; i < cart.length; i++) {
+            sum += cart[i].quantity * cart[i].price;
+        }
         return /* html */`
         ${Header.render()}
             <div class="max-w-5xl mx-auto mt-40 mb-56">
@@ -100,10 +104,10 @@ const CartPage = {
                                 <tbody>
                                 <tr>
                                 <td>
-                                <input id="price" name="price" type="price" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="">
+                                <input id="price" name="price" type="price" value="${sum}" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="">
                                 </td>
                                 <td>
-                                <button class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">Thanh Toán</button>
+                                <a href="/checkouts"><button class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm">Thanh Toán</button></a>
                               </td>
                                 </tr>
                                 </tbody>

@@ -15,7 +15,6 @@ const ProductDetailPage = {
         <div class="md:flex items-start justify-center py-12 2xl:px-20 md:px-6 px-4">
             <div class="xl:w-2/6 lg:w-3/5 w-80 md:block hidden">
                 <img class="w-full h-96" src="https://i.ibb.co/znBmcWV/Rectangle-37-1.png" alt="A girl Posing Image" />
-
             </div>
             <div class="md:hidden">
                 <img class="w-full" alt="image of a girl posing" src="https://i.ibb.co/QMdWfzX/component-image-one.png" />
