@@ -3,10 +3,6 @@ import HomePage from "./page/home";
 import AboutPage from "./page/about";
 import ProductPage from "./page/products";
 import PostsPage from "./page/posts";
-// import LoginPage from "./page/login";
-// import SignupPage from "./page/signup";
-// import Header from "./components/header";
-// import Footer from "./components/footer";
 import DashBoardPage from "./page/admin/dashboard";
 import AdminAddPosts from "./page/admin/posts/add";
 import AdminAddProducts from "./page/admin/products/add";
@@ -67,25 +63,5 @@ router.on({
     "/admin/category/add": () => print(AdminAddCategory),
     "/admin/category": () => print(AdminCategory),
 
-    // "/": () => {
-    //     print(HomePage);
-    // },
-    // "/about": () => {
-    //     print(AboutPage);
-    // },
-    // "/product": () => {
-    //     print(ProductPage);
-    // },
-    // "/login": () => {
-    //     print(LoginPage);
-    // },
-    // "/signup": () => {
-    //     print(SignupPage);
-    // },
-
-    // "/news/:id": ({ data }) => {
-    //     const { id } = data;
-    //     print(DetailNewsPage);
-    // },
 });
 router.resolve();

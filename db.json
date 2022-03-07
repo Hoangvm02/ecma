@@ -25,10 +25,10 @@
       "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non orci tristique, blandit mauris eget, fermentum diam. Curabitur sit amet libero vel felis pellentesque sollicitudin eget quis odio. Sed vitae molestie eros, in aliquam velit. Curabitur egestas ullamcorper elit, quis facilisis orci ultrices sit amet. In hac habitasse platea dictumst. Phasellus ultrices dictum ligula et mollis. Aenean faucibus mattis ante sed tristique. Maecenas accumsan enim et erat varius lacinia ac vestibulum est. Vivamus eget eros in leo tincidunt viverra eget vel magna. Mauris aliquet ligula in venenatis auctor. Proin vehicula molestie nibh sed semper. Nam faucibus dui eu sollicitudin pretium."
     },
     {
-      "id": 5,
-      "title": "hoàng",
-      "img": "http://res.cloudinary.com/ecommercer2021/image/upload/v1645600084/ud9apohdg0xqnknpede7.jpg",
-      "desc": "ábdadhasdahdasdahndhasdasiduhasdasudajsdasdasd11231"
+      "title": "adac",
+      "img": "http://res.cloudinary.com/ecommercer2021/image/upload/v1645775735/zxijiqjfe02djocanhkg.jpg",
+      "desc": "dgahsdhjaks",
+      "id": 5
     }
   ],
   "users": [
@@ -61,6 +61,11 @@
       "email": "hoangvm02@gmail.comm",
       "password": "$2a$10$y7s237PWSGR33zdPqXhvDuR.cCkPMyogwjBC5uzgECDXhcIbINJ.a",
       "id": 6
+    },
+    {
+      "email": "hoangvm02@gmail.com",
+      "password": "$2a$10$SIPNE5l8GCWtuL6Elkl0w.53B31h8yuxj.rM0gsP4Oc4NDBaIO6ym",
+      "id": 7
     }
   ],
   "products": [
@@ -135,19 +140,12 @@
       "id": 33
     },
     {
-      "name": "Flared Cotton Tank Top",
-      "img": "https://i.ibb.co/4ZPL5F0/Rectangle-37.png",
+      "id": 34,
+      "name": "Flared Cotton Tank Top avc",
+      "img": "http://res.cloudinary.com/ecommercer2021/image/upload/v1645775756/fvtpbiothvdaefqqdfod.jpg",
       "price": "85000",
-      "desc": "adas",
-      "id": 34
-    },
-    {
-      "name": "Flared Cotton Tank Top",
-      "img": "https://i.ibb.co/4ZPL5F0/Rectangle-37.png",
-      "price": "850000",
-      "desc": "ad",
-      "id": 35
+      "desc": "adashh112"
     }
   ],
-  "category":[]
+  "category": []
 }
